@@ -21,7 +21,7 @@ export const generateToken = async (payload: any, options?: SignOptions): Promis
       if (!secretKey) return;
       jwt.sign(payload, secretKey, jwtOptions, (err, token) => {
         if (err) reject(err);
-        resolve(token);
+        resolve(token!);
       });
     });
   };
